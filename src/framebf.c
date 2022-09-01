@@ -14,8 +14,6 @@ unsigned int width, height, pitch;
 /* Frame buffer address
  * (declare as pointer of unsigned char to access each byte) */
 unsigned char *fb;
-
-
 /**
  * Set screen resolution to 1024x768
  */
@@ -26,14 +24,14 @@ void framebf_init(int pw, int ph, int vw, int vh) {
     mBuf[2] = MBOX_TAG_SETPHYWH; //Set physical width-height
     mBuf[3] = 8; // Value size in bytes
     mBuf[4] = 0; // REQUEST CODE = 0
-    mBuf[5] = pw; // Value(width)
-    mBuf[6] = ph; // Value(height)
+    mBuf[5] = 1080; // Value(width)
+    mBuf[6] = 768; // Value(height)
 
     mBuf[7] = MBOX_TAG_SETVIRTWH; //Set virtual width-height
     mBuf[8] = 8;
     mBuf[9] = 0;
-    mBuf[10] = vw;
-    mBuf[11] = vh;
+    mBuf[10] = 1080;
+    mBuf[11] = 768;
 
     mBuf[12] = MBOX_TAG_SETVIRTOFF; //Set virtual offset
     mBuf[13] = 8;
