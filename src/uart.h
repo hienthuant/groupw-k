@@ -21,3 +21,4 @@ void uart_puts(char *s);
 void uart_dec(int num);
 void uart_hex(unsigned int d);
 int compare(char a[],char b[]);
+void welcome();
