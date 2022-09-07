@@ -1,5 +1,7 @@
 #include "framebf.h"
 #include "end_video.h"
+#include "end_video2.h"
+#include "end_video3.h"
 #include "start_video.h"
 #include "uart.h"
 #include "mbox.h"
