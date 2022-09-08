@@ -1,12 +1,13 @@
 // -----------------------------------gpio.h -------------------------------------
 
 /*Raspberry Pi 4's peripheral physical address. It is 0xFE000000 in RBP4, 0x3F000000 in RBP3*/
-#define RBP3 //for emulation with QEMU
+//#define RBP3 //for emulation with QEMU
+
 
 #ifdef RBP3
-    #define MMIO_BASE       0x3F000000	
+     #define MMIO_BASE       0x3F000000	
 #else //RBP4
-    #define MMIO_BASE       0xFE000000
+     #define MMIO_BASE       0xFE000000
 #endif
 
 typedef unsigned char           uint8_t;
