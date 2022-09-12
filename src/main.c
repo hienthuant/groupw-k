@@ -8,6 +8,7 @@ void main()
 	int i = 0;
 	char cmd[50];
 	int size = 0;
+	int mflag = 0;
 // set up serial console
 	uart_init();
 	// Welcome screen
@@ -28,7 +29,8 @@ void main()
 		char c = uart_getc();
 		//send back twice
 		uart_sendc(c);
-
+		if (mflag == 1)
+		{
 		if (c == 's') //scroll down
 		{
 			uart_puts("\n");
@@ -49,7 +51,16 @@ void main()
 				pos -= 1680*100;
 			Pic3(pos);
 		}
+		else if (c == 0x1B)
+		{
+			uart_puts("\n");
+			mflag = 0;
+		}
+	}
 
+	
+		
+	
 		if (c == '\b' ) //Using Backspace to delete command
 		{
 			uart_puts("\033[K");
@@ -97,6 +108,7 @@ void main()
 			{
 				uart_init();
 				Pic3(0);
+				mflag = 1;
 			}
 			else if (compare(cmd,"video") == 0)
 			{
