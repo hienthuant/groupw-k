@@ -107,7 +107,7 @@ void main()
 			else if (compare(cmd,"pic3") == 0)
 			{
 				uart_init();
-				Pic3(0);
+				Pic3(pos);
 				mflag = 1;
 			}
 			else if (compare(cmd,"video") == 0)
